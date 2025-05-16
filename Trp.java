@@ -9,7 +9,7 @@ public class Trp{
 
         }
 
-        //calculate right max boundary
+        //calculate rht max boundary
         int rightMax[]= new int[n];
         rightMax[n-1]= height[n-1];
         for( int i=n-2;i>=0;i--){
@@ -26,19 +26,11 @@ public class Trp{
              
         }
 
-
-
        
-      
-
-
-
-
-
         public static void main( String args[]){
             int height[]= { 4,2,3,5,6,9};
             
-          System.out.println( " totel trapped water is :"+ Trapping(height));
+          System.out.println( " totel trapped water is : "+ Trapping(height));
 
     }
 }
