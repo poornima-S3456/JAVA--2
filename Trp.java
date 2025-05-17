@@ -9,7 +9,7 @@ public class Trp{
 
         }
 
-        //calculate rht max boundary
+        //calculate right max boundary
         int rightMax[]= new int[n];
         rightMax[n-1]= height[n-1];
         for( int i=n-2;i>=0;i--){

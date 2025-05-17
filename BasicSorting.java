@@ -44,7 +44,7 @@ public class BasicSorting {
         }
     }
 
-    public static void InsertionSort(int arr[]){   //selection sort
+    public static void InsertionSort(int arr[]){   //Insirtion  sort
         for( int i=1;i<arr.length;i++){
             int curr =arr[i];
             int prev = i-1;
