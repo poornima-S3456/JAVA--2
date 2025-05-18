@@ -27,9 +27,9 @@ System.out.println( newstr);
 return;
     }
 
-    //kam
-    char currchar = str.charAt(idx);//jo hamara current char hem usko currchar me store kra diaa
-           if( map[currchar-'a']==true){//agr true aata he to char duplicate he
+    
+    char currchar = str.charAt(idx);
+           if( map[currchar-'a']==true){
             RemoveDuplicate( str,idx+1,newstr,map);
            }
            else{
@@ -41,7 +41,7 @@ return;
 
     public static void main(String args[]){
                // System.out.println(" Number of ways : "+tillingProblem(4) );
-         String str = "heelloww";
+         String str = "hello";
         RemoveDuplicate(str,0,new StringBuilder(""),new boolean[26]);
  
     }
