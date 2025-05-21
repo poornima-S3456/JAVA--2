@@ -15,6 +15,8 @@ public class Pairing {
          return (n-1)+totelway;
     }
 
+    //Binary string
+
     public static void printBinaryString( int n,int lastplace,String str){
         if(n==0){
             System.out.println(str);
@@ -31,7 +33,7 @@ public class Pairing {
     public static void main(String[] args){
         printBinaryString( 6, 0,"");
 
-        System.out.println( " totelways is :"+Friendspairing(3));
+       System.out.println( " totelways is :"+Friendspairing(3));
     }
     
 }

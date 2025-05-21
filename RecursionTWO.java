@@ -68,36 +68,15 @@ public static void alloccurence( int arr[],int key,int i){
     alloccurence( arr,key,i+1);
 }
 
-//negativearray
+//length
 
-public static void negativearray(int arr[]){
-for( int i=0;i<arr.length;i++){
- for( int j=i+1;j<arr.length;j++){
-    if(arr[i]>arr[j]){
+public static int length(String str){
+    if(str.length()==0){
 
-    int temp = arr[i];
-    arr[i]= arr[j];
-    arr[j]= temp;
- }
-  }
-}
-
-int[] temp = new int[arr.length];
-int index = 0;
-
-for(int i=0;i<arr.length;i++){
-    if(arr[i]<0){
-        temp[index++]=arr[i];
+        return 0;
     }
-}
-for( int i=0;i<arr.length;i++){
-    if(arr[i]>=0){
-        temp[index++]=arr[i];
-    }
-}
-for(int i=0;i<arr.length;i++){
-    arr[i]=temp[i];
-}
+
+    return length(str.substring(1))+1;
 }
 
 
@@ -115,24 +94,41 @@ public static void cyclicrotation(int arr[]){
 
 }
 
+//negativearray
+public static void negativearray(int arr[]){
+for( int i=0;i<arr.length;i++){
+ for( int j=i+1;j<arr.length;j++){
+    if(arr[i]>arr[j]){
 
-
-public static int length(String str){
-    if(str.length()==0){
-
-        return 0;
-    }
-
-    return length(str.substring(1))+1;
+    int temp = arr[i];
+    arr[i]= arr[j];
+    arr[j]= temp;
+ }
+  }
 }
+int[] temp = new int[arr.length];
+int index = 0;
+for(int i=0;i<arr.length;i++){
+    if(arr[i]<0){
+        temp[index++]=arr[i];
+    }
+}
+for( int i=0;i<arr.length;i++){
+    if(arr[i]>=0){
+        temp[index++]=arr[i];
+    }
+}
+for(int i=0;i<arr.length;i++){
+    arr[i]=temp[i];
+}
+}    public static void main(String args[]){
+
+         int arr[]={ -4,-3,0,9,7,-5,0};
+    negativearray(arr);
+    for( int i=0;i<arr.length;i++){
+        System.out.print(arr[i]+" ");
 
 
-
-
-
-
-
-    public static void main(String args[]){
  // System.out.println(" Number of ways : "+tillingProblem(4) );
         // String str = "hello";
 
@@ -152,15 +148,12 @@ public static int length(String str){
     //  for( int i=0;i<arr.length;i++){
     //  System.out.print(arr[i]+" ");
     // }
-    // }  int arr[]={ -4,-3,0,9,7,-5,0};
-    // negativearray(arr);
-    // for( int i=0;i<arr.length;i++){
-
-    //     System.out.print(arr[i]+"");
+  //  } 
+    
 
 
-    String str ="abcde";
-    System.out.println(length(str));
+    // String str ="abcde";
+    // System.out.println(length(str));
 
     }
-  }
+    }}
