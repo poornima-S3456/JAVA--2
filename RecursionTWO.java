@@ -40,9 +40,7 @@ public static void RemoveDuplicate(String str,int idx,StringBuilder newstr,boole
     if( idx== str.length()){
 System.out.println( newstr);
 return;
-    }
-
-    
+    }    
     char currchar = str.charAt(idx);
            if( map[currchar-'a']==true){
             RemoveDuplicate( str,idx+1,newstr,map);
@@ -55,18 +53,16 @@ return;
 }
 
 
-//chech occurence
-public static void alloccurence( int arr[],int key,int i){
-
-    if(i==arr.length){
-
-       return;
-    }
-    if(arr[i]==key){
-        System.out.println(i+" ");
-    }
-    alloccurence( arr,key,i+1);
-}
+//chechk occurence
+// public static void alloccurence( int arr[],int key,int i){
+//     if(i==arr.length){
+//        return;
+//     }
+//     if(arr[i]==key){
+//         System.out.println(i+" ");
+//     }
+//     alloccurence( arr,key,i+1);
+// }
 
 //length
 
@@ -121,23 +117,42 @@ for( int i=0;i<arr.length;i++){
 for(int i=0;i<arr.length;i++){
     arr[i]=temp[i];
 }
-}    public static void main(String args[]){
+} 
 
-         int arr[]={ -4,-3,0,9,7,-5,0};
-    negativearray(arr);
-    for( int i=0;i<arr.length;i++){
-        System.out.print(arr[i]+" ");
+//chechk occurence
+public static void alloccurence( int arr[],int key,int i){
+    if(i==arr.length){
+       return;
+    }
+    if(arr[i]==key){
+        System.out.println(i+" ");
+    }
+    alloccurence( arr,key,i+1);
+}
+
+
+
+
+
+public static void main(String args[]){
+
+
+     int arr[]={ 3,2,4,5,6,2,7,2,3};
+    int key = 2;
+           alloccurence(arr,key, 0);
+     System.out.println();
+
+    //      int arr[]={ -4,-3,0,9,7,-5,0};
+    // negativearray(arr);
+    // for( int i=0;i<arr.length;i++){
+    //     System.out.print(arr[i]+" ");
 
 
  // System.out.println(" Number of ways : "+tillingProblem(4) );
         // String str = "hello";
 
        // RemoveDuplicate(str,0,new StringBuilder(""),new boolean[26]);
-     //t arr[]={ 3,2,4,5,6,2,7,2,3};
-    //nt key = 2;
-      
-       //loccurence(arr,key, 0);
-      //ystem.out.println();
+     
 
 
      //  printdigits(1947);
@@ -156,4 +171,4 @@ for(int i=0;i<arr.length;i++){
     // System.out.println(length(str));
 
     }
-    }}
+    }
