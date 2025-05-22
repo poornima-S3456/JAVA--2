@@ -11,6 +11,8 @@ public class Alist {
       list.add(2);
       list.add(3);
       list.add(4);
+
+      list.add( 1,9);
      System.out.println(list);
 
      //get operation
@@ -28,9 +30,8 @@ public class Alist {
 
 
 //contain
-
-System.out.println(list.contains(2));
-System.out.println(list.contains(33));
+// System.out.println(list.contains(2));
+// System.out.println(list.contains(33));
 
     }
 
