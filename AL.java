@@ -1,13 +1,14 @@
+
 import java.util.ArrayList;
 import java.util.Collections;
  public class AL {
 
-//  public static void swap(ArrayList<Integer>list , int idx1, int idx2){
-//         int temp = list.get(idx1);  //swapping
-//         list.set(idx1,list.get(idx2));
-//         list.set(idx2,temp);
+ public static void swap(ArrayList<Integer>list , int idx1, int idx2){
+        int temp = list.get(idx1);  //swapping
+        list.set(idx1,list.get(idx2));
+        list.set(idx2,temp);
 
-//     }
+    }
    public static void main(String args[]){
     //code1
     ArrayList<ArrayList<Integer>>mainList= new ArrayList<>();
@@ -26,24 +27,35 @@ import java.util.Collections;
       mainList.add(list3);
       System.out.println(mainList);
 
+      //nested loops
+
+      for(int i=0;i<mainList.size();i++){
+        ArrayList<Integer>currList= mainList.get(i);
+
+        for(int j=0;j<currList.size();j++){
+          System.out.print(currList.get(j)+" ");
+        }
+        System.out.println();
+      }
+
      
 
 
 //    //ascending order(Sorting)
-//    Collections.sort(list);
-//   System.out.println(list);
+   Collections.sort(list2);
+  System.out.println("ascending order : "+list2);
 
 
 // //descending order(Sorting)
-// Collections.sort(list , Collections.reverseOrder());
-// System.out.println(list);
+Collections.sort(list2 , Collections.reverseOrder());
+System.out.println(" descending order : "+list2);
 
 
    
-   //for swapping
-  //  int idx1 = 2, idx2 = 3;
-  //  swap(list,idx1,idx2);
-  //  System.out.println(list);
+  // for swapping
+   int idx1 = 2, idx2 = 3;
+   swap(list1,idx1,idx2);
+   System.out.println( "Swapping : "+list1);
 
 
   //  //find maximum in arraylist
