@@ -17,9 +17,9 @@ public static void printArray(int arr[]){
     System.out.println();
    
 }
+//find intersection of two sorted array
 
  public static void findIntersection(int arr1[],int arr2[]){
-
     int i =0;
     int j = 0;
     while(i<arr1.length && j<arr2.length){
@@ -35,13 +35,46 @@ public static void printArray(int arr[]){
             i++;
             j++;
         }
-
-
     } 
  }
 
 
+
+ //Maximum product subarray
+
+ 
+   // }
+//    public static int pp()
+
+//     int max = arr3[0];
+//     int product = 1;
+
+//     //left to right pass
+//     for(int i=0;i<arr3.length;i++){
+//         product*=arr3[i];
+//         max = Math.max(max ,product);
+//     }
+//     product = 1;
+
+//     //right to left pass
+
+//     for(int i= arr3.length-1; i>=0;i--){
+//         product*=arr3[i];
+//         max = Math.max(max , product);
+        
+//         if(product==0){
+//             product = 1;
+//         }
+//         return max;
+            
+//         }
+
+
 public static void main(String args[]){
+
+
+    // int arr3[]= { 2,3,-2,4};
+    // System.out.println("Maximum product subarray  : "+maxproduct(arr3) );
 
 int arr1[]= { 1,2,4,6,6};
 int arr2[]= { 2,4,6,8};
