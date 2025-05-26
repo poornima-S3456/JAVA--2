@@ -1,3 +1,6 @@
+import java.util.Scanner;
+
+
 public class PracticeQ {
 
     //cyclic rotation
@@ -17,8 +20,10 @@ public static void printArray(int arr[]){
     System.out.println();
    
 }
-//find intersection of two sorted array
 
+
+
+//find intersection of two sorted array
  public static void findIntersection(int arr1[],int arr2[]){
     int i =0;
     int j = 0;
@@ -39,64 +44,135 @@ public static void printArray(int arr[]){
  }
 
 
-
- //Maximum product subarray
-
  
-   // }
-//    public static int pp()
-
-//     int max = arr3[0];
-//     int product = 1;
-
-//     //left to right pass
-//     for(int i=0;i<arr3.length;i++){
-//         product*=arr3[i];
-//         max = Math.max(max ,product);
-//     }
-//     product = 1;
-
-//     //right to left pass
-
-//     for(int i= arr3.length-1; i>=0;i--){
-//         product*=arr3[i];
-//         max = Math.max(max , product);
-        
-//         if(product==0){
-//             product = 1;
-//         }
-//         return max;
-            
-//         }
-
-
 public static void main(String args[]){
 
-
-    // int arr3[]= { 2,3,-2,4};
-    // System.out.println("Maximum product subarray  : "+maxproduct(arr3) );
-
-int arr1[]= { 1,2,4,6,6};
-int arr2[]= { 2,4,6,8};
-System.out.println("intersection:  ");  
-  findIntersection(arr1 , arr2);    
+    int n =4;
+    int[][] pascal = new int[n][n];
 
 
- 
-
-//     int arr[]={1,2,3,4,5,6};
-//     System.out.print("Print original array = ");
-//     printArray(arr);
-
-//  rotateByOne(arr);
-//   System.out.print("Array after rotation = ");
-//    printArray(arr);
- }
+    for(int i=0;i<n;i++){
+pascal[i][0]= 1;
 
 
+        for( int j=1;j<=i ; j++){
+            pascal[i][j]= pascal[i-1][j-1]+ pascal[i - 1][j];
+        }
+    }
 
+    //print
+    for(int i=0 ; i<n ; i++ ){
+
+        for(int space =0; space<n-i-1;space++){
+            System.out.print(" ");
+        }
+
+        for(int j=0;j<=i;j++){
+       System.out.print(pascal[i][j]+" " );
+
+
+        }
+        System.out.println();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//         Scanner sc = new Scanner( System.in);
+//     //take matrix size from user
+//     System.out.print(" Enter number of rows :");
+//     int rows = sc.nextInt();
+
+//     System.out.print( "Enter number of column");
+//     int cols = sc.nextInt();
+
+// // declare original matrix
+//     int[][] matrix = new int[rows][cols];
+
+//     //intput matrix element 
+//     System.out.println(" Enter matrix elements :");
+//         for( int i=0;i<rows ; i++){
+//          for(int j=0; j<cols ; j++){
+
+//     matrix[i][j]= sc.nextInt();
+    
+//          }
+//              }
+// //print original matrix
+
+// System.out.println(" original matrix");
+
+// for(int i=0; i<cols; i++){
+
+//     for( int j=0; j<cols;j++){
+
+//         System.out.print(matrix[i][j]+"   ");
+//     }
+//     System.out.println();
+// }
+
+// //Transpose matrix
+// int[][] transpose = new int [cols][rows];
+// for(int i=0;i<cols;i++){
+//     for(int j=0; j<rows ; j++){
+//       transpose[i][j]=matrix[j][i];
+
+//     }
+// }
+// //print transpose matrix 
+// System.out.println(  "Transpose matrix");
+// for( int i=0;i<cols;i++){
+//     for(int j=0;j<rows;j++){
+// System.out.print( transpose[i][j]+"  ");
+//     }
+//     System.out.println();
+// }
+// sc.close();
+
+
+
+
+
+
+
+
+   
 
 
 
     
+    
+// // int arr1[]= { 1,2,4,6,6};
+// // int arr2[]= { 2,4,6,8};
+// // System.out.println("intersection:  ");  
+// //   findIntersection(arr1 , arr2);    
+
+
+ 
+
+// //     int arr[]={1,2,3,4,5,6};
+// //     System.out.print("Print original array = ");
+// //     printArray(arr);
+
+// //  rotateByOne(arr);
+// //   System.out.print("Array after rotation = ");
+// //    printArray(arr);
+  }
 }
+
+    
+
