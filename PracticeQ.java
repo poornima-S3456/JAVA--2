@@ -46,34 +46,76 @@ public static void printArray(int arr[]){
 
  
 public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
 
-    int n =4;
-    int[][] pascal = new int[n][n];
+    //Take array input
+    System.out.print("Enter the number of element : ");
+    int n = sc.nextInt();
+    int[] arr = new int[n];
+
+    System.out.print("Enter the elements :");
+    for(int i=0; i<n;i++){
+
+        arr[i]= sc.nextInt();
+       }
+
+       //initializing min and max 
+       int max = arr[0];
+       int min = arr[0];
 
 
-    for(int i=0;i<n;i++){
-pascal[i][0]= 1;
-
-
-        for( int j=1;j<=i ; j++){
-            pascal[i][j]= pascal[i-1][j-1]+ pascal[i - 1][j];
+       //finding min and max
+       for(int i=1; i<n;i++){
+          
+        if(arr[i]>max){
+            max = arr[i];
         }
-    }
-
-    //print
-    for(int i=0 ; i<n ; i++ ){
-
-        for(int space =0; space<n-i-1;space++){
-            System.out.print(" ");
+        if (arr[i]<min){
+            min = arr[i];
         }
+     }
+     System.out.println(  "Maximum element : "+ max);
+     System.out.println( "Minimum element : " + min);
 
-        for(int j=0;j<=i;j++){
-       System.out.print(pascal[i][j]+" " );
 
 
-        }
-        System.out.println();
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // int n =4;
+    // int[][] pascal = new int[n][n];
+
+    // for(int i=0;i<n;i++){
+    //    pascal[i][0]= 1;
+
+    //     for( int j=1;j<=i ; j++){
+    //         pascal[i][j]= pascal[i-1][j-1]+ pascal[i - 1][j];
+    //     }
+    // }
+    // //print
+    // for(int i=0 ; i<n ; i++ ){
+    //     for(int space =0; space<n-i-1;space++){
+    //         System.out.print(" ");
+    //     }
+
+    //     for(int j=0;j<=i;j++){
+    //    System.out.print(pascal[i][j]+" " );
+
+    //     }
+    //     System.out.println();
+    // }
 
 
 

@@ -33,21 +33,17 @@ set.add( arr[i]);
 
 
 
-HashMap<Integer , Integer>map = new HashMap<>();
-map.put(1,1);
-map.put( 2,2);
-map.put(3,3);
-map.put(4,4);
+HashMap<Integer , String>map = new HashMap<>();
+map.put(1,"hii");
+map.put( 2,"hello");
+map.put(3," byee");
+map.put(3,"byeiiii");
 
 
 //Foreach loop
 map.forEach((key,value )->{
 System.out.println( key+"   "+value);
-
 });
-
-
-
 
 
 System.out.println( map.containsKey(1));
@@ -55,8 +51,7 @@ System.out.println(map.get(2));
 //System.out.println(map.remove(3));
 System.out.println();
 
-for(int Key : map.keySet()){
-  if(Key>2){
+for(int Key : map.keySet()){  if(Key>2){
   System.out.println(Key);
 
 }}
