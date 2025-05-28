@@ -17,9 +17,6 @@ System.out.println();
  
 }
 
-//default constructor
-
-class student
 
 
 
