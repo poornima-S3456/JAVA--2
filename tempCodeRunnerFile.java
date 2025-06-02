@@ -1,11 +1,16 @@
- public void addList(int data) {
+ // public static void reverse(int arr[]) {
 
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = tail = newNode;
-            return;
-        }
-        tail.next = newNode;
-        tail = newNode;
+    //     int start = 0;
+    //     int end = arr.length - 1;
 
-    }
+    //     while (start < end) {
+
+    //         // swap arr[start] and arr[end]
+    //         int temp = arr[start];
+    //         arr[start] = arr[end];
+    //         arr[end] = temp;
+
+    //         start++;
+    //         end--;
+    //     }
+    // }
