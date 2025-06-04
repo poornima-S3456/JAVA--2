@@ -3,95 +3,109 @@ import java.util.*;
 
 public class DSA {
 
-// reverse array
+    // reverse array
     // public static void reverse(int arr[]) {
 
-    //     int start = 0;
-    //     int end = arr.length - 1;
+    // int start = 0;
+    // int end = arr.length - 1;
 
-    //     while (start < end) {
+    // while (start < end) {
 
-    //         // swap arr[start] and arr[end]
-    //         int temp = arr[start];
-    //         arr[start] = arr[end];
-    //         arr[end] = temp;
+    // // swap arr[start] and arr[end]
+    // int temp = arr[start];
+    // arr[start] = arr[end];
+    // arr[end] = temp;
 
-    //         start++;
-    //         end--;
-    //     }
+    // start++;
+    // end--;
+    // }
     // }
 
- static void permute(String str , String result){
 
-    //Base case: if input string is empty print the result
-    if(str.length()==0){
-        System.out.println( result+" ");
-        return;
+    //(find permutation )
+    static void permute(String str, String result) {
+
+        // Base case: if input string is empty print the result
+        if (str.length() == 0) {
+            System.out.println(result + " ");
+            return;
+        }
+
+        // recr for each char in the string
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            // remaining string after removing chosen character
+            String remaining = str.substring(0, i) + str.substring(i + 1);
+
+            // recr with remaining string
+            permute(remaining, result + ch);
+        }
+
     }
 
-    //recr for each char in the string
-    for(int i=0; i<str.length();i++){
-        char ch = str.charAt(i);
+    //(dutch national flag problem)
+    public static void sortColors(int arr[]) {
+        int low = 0;
+        int mid = 0;
+        int high = arr.length - 1;
 
-        //remaining string after removing chosen character
-        String remaining = str.substring(0 , i)+ str.substring(i+1);
+        while (mid <= high) {
 
-        //recr with remaining string
-        permute(remaining, result+ch);
-    }
-
-}
-
-public static void sortColors(int arr[]){
-
-    int low = 0;
-    int mid = 0;
-    int high = arr.length-1;
-
-    while(mid<=high){
-
-        if(arr[mid]==0){
-
-            //swap 0 to the front 
-            int temp = arr[low];
-            arr[low]=arr[mid];
-            arr[mid]=temp;
-            low++;
-            mid++;
-        }
-        else if(arr[mid]==1){
-            mid++;
-        }
-        else{
-            //swap 2 to the end
-            int temp = arr[mid];
-            arr[mid]=arr[high];
-            arr[high]= temp;
-            high--;
+            if (arr[mid] == 0) {
+                // swap 0 to the front
+                int temp = arr[low];
+                arr[low] = arr[mid];
+                arr[mid] = temp;
+                low++;
+                mid++;
+            } else if (arr[mid] == 1) {
+                mid++;
+            } else {
+                // swap 2 to the end
+                int temp = arr[mid];
+                arr[mid] = arr[high];
+                arr[high] = temp;
+                high--;
+            }
         }
     }
-}
+
+    public static int missingNumber(int arr[] , int n){
+        int totel = n*(n+1)/2;
+        int sum =0;
+
+        for(int num : arr){
+            sum+=num;         }
+    
+    return totel-sum;
+
+        }
+
 
 
     public static void main(String args[]) {
+        int arr[]= { 1,2,4,5,6};
+        int n=6;
 
-int arr[]= { 2,0,1,2,2,1,0,};
-sortColors(arr);
-
-System.out.println( Arrays.toString(arr));
-
-
-
-// String input= "ABC";
-// System.out.print("permutation of input "+ input + " are: ");
-// permute(input," ");
+        int missing = missingNumber(arr,n);
+        System.out.println("missing number is: "+ missing);
 
 
 
 
 
 
-        //find kth max and min
+
+        // int arr[] = { 2, 0, 1, 2, 2, 1, 0, };
+        // sortColors(arr);
+        // System.out.println(Arrays.toString(arr));
+
+        // String input= "ABC";
+        // System.out.print("permutation of input "+ input + " are: ");
+        // permute(input," ");
+
+        // find kth max and min
         // Scanner sc = new Scanner(System.in);
 
         // // input array size
@@ -104,7 +118,7 @@ System.out.println( Arrays.toString(arr));
         // // input array element
         // System.out.print("enter the element: ");
         // for (int i = 0; i < n; i++) {
-        //     arr1[i] = sc.nextInt();
+        // arr1[i] = sc.nextInt();
         // }
         // // input value of k
         // System.out.print("enter the value of k: ");
@@ -116,14 +130,14 @@ System.out.println( Arrays.toString(arr));
         // // check if k is valid
         // if (k > 0 && k <= n) {
 
-        //     int kthMin = arr1[k - 1];
-        //     int kthMax = arr1[n - k];
+        // int kthMin = arr1[k - 1];
+        // int kthMax = arr1[n - k];
 
-        //     System.out.println("kth Min element: " + kthMin);
-        //     System.out.println("kth Max element: " + kthMax);
+        // System.out.println("kth Min element: " + kthMin);
+        // System.out.println("kth Max element: " + kthMax);
         // } else {
 
-        //     System.out.println(" Invalid value of k");
+        // System.out.println(" Invalid value of k");
         // }
         // sc.close();
 
