@@ -1,5 +1,5 @@
 
-//import java.util.*;
+import java.util.*;
 
 public class DSA {
 
@@ -42,12 +42,49 @@ public class DSA {
 
 }
 
+public static void sortColors(int arr[]){
+
+    int low = 0;
+    int mid = 0;
+    int high = arr.length-1;
+
+    while(mid<=high){
+
+        if(arr[mid]==0){
+
+            //swap 0 to the front 
+            int temp = arr[low];
+            arr[low]=arr[mid];
+            arr[mid]=temp;
+            low++;
+            mid++;
+        }
+        else if(arr[mid]==1){
+            mid++;
+        }
+        else{
+            //swap 2 to the end
+            int temp = arr[mid];
+            arr[mid]=arr[high];
+            arr[high]= temp;
+            high--;
+        }
+    }
+}
+
 
     public static void main(String args[]) {
 
-String input= "ABC";
-System.out.print("permutation of input "+ input + " are: ");
-permute(input," ");
+int arr[]= { 2,0,1,2,2,1,0,};
+sortColors(arr);
+
+System.out.println( Arrays.toString(arr));
+
+
+
+// String input= "ABC";
+// System.out.print("permutation of input "+ input + " are: ");
+// permute(input," ");
 
 
 
