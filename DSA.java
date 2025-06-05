@@ -85,15 +85,11 @@ public class DSA {
 
 
     public static void main(String args[]) {
-        int arr[]= { 1,2,4,5,6};
-        int n=6;
+        int arr[]= { 1,2,3,4,5,6,7,9,10};
+        int n=10;
 
         int missing = missingNumber(arr,n);
         System.out.println("missing number is: "+ missing);
-
-
-
-
 
 
 

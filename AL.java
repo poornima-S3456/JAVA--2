@@ -1,7 +1,8 @@
 
 import java.util.*;
 
- public class AL {
+ 
+public class AL {
 
  public static void swap(ArrayList<Integer>list , int idx1, int idx2){
         int temp = list.get(idx1);  //swapping

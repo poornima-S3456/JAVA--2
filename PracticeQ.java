@@ -65,12 +65,14 @@ public class PracticeQ {
         int arr1[] = { 3, 4, 5, 1, 2 }; // sorted and rotated
         int arr2[] = { 1, 2, 4, 3, 5}; // not
         int arr3[] = { 5, 1, 2, 3, 4 }; // sorted and rotated
-        int arr4[] = { 2, 1,1, 4, 3 }; // sorted and rotated
+        int arr4[] = { 2, 1,1, 4, 3 }; // not
 
         System.out.println(SortedAndRotated(arr1));
         System.out.println(SortedAndRotated(arr2));
         System.out.println(SortedAndRotated(arr3));
         System.out.println(SortedAndRotated(arr4));
+
+        
 
         // Scanner sc = new Scanner(System.in);
 
