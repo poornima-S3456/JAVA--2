@@ -71,6 +71,8 @@ public class DSA {
         }
     }
 
+
+  //missing number
     public static int missingNumber(int arr[] , int n){
         int totel = n*(n+1)/2;
         int sum =0;
@@ -79,17 +81,49 @@ public class DSA {
             sum+=num;         }
     
     return totel-sum;
-
+    
         }
+
+
+        
+
+     // array leader
+          static void findLeader(int arr[]){
+
+        int n = arr.length;
+        int maxFromright = arr[n-1];
+
+        System.out.print("Leaders: "+maxFromright+ " ");
+
+        //traverse from second last to the start
+
+        for(int i=n-2;i>=0;i-- ){
+
+            if(arr[i]>maxFromright){
+                maxFromright = arr[i];
+                System.out.print(maxFromright+ " ");
+            }
+        }
+     }
+
+
+     
 
 
 
     public static void main(String args[]) {
-        int arr[]= { 1,2,3,4,5,6,7,9,10};
-        int n=10;
 
-        int missing = missingNumber(arr,n);
-        System.out.println("missing number is: "+ missing);
+ int arr6[]= {16,17,4,3,5,2};
+
+ findLeader(arr6);
+
+
+
+        // int arr[]= { 1,2,3,4,5,6,7,9,10};
+        // int n=10;
+
+        // int missing = missingNumber(arr,n);
+        // System.out.println("missing number is: "+ missing);
 
 
 
