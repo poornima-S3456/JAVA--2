@@ -1,10 +1,17 @@
- NewThread t2 = new NewThread();
-//     NewThread t3 = new NewThread();
+Scanner sc = new Scanner(System.in);
+        // System.out.print("enter the element:  ");
+        // String input = sc.nextLine();
 
-//     t2.setName("low priority");
-//     t3.setName("high priority");
+        // String Original = input.toLowerCase();
+        // String reversed = "";
 
-// t2.setPriority(Thread.MIN_PRIORITY );
-// t3.setPriority(Thread.MAX_PRIORITY);
-// t2.start();
-// t3.start();
+        // for(int i= Original.length()-1; i>=0;i--){
+        //     reversed += Original.charAt(i);
+
+        // }
+        // if(Original.equals(reversed)){
+        //     System.out.println("Palindrome....");
+        // }
+        // else{
+        //     System.out.println("not a Palindrome...");
+        // }
