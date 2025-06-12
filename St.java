@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class St {
-
-
     static boolean areAnagrams(String str1, String str2) {
         // Remove whitespace and convert to lowercase
         str1 = str1.replaceAll("\\s", "").toLowerCase();
@@ -25,41 +23,70 @@ public class St {
         return Arrays.equals(arr1, arr2);
     }
 
-      
-    
-    public static void main(String args[]){
+ public static String countAndSay(int n) {
+        if (n <= 0) return "";
 
-String s1 = "Listen";
-        String s2 = "Silent";
+        String result = "1";
 
-        if (areAnagrams(s1, s2)) {
-            System.out.println("The strings are anagrams.");
-        } else {
-            System.out.println("The strings are NOT anagrams.");
+        for (int i = 2; i <= n; i++) {
+            StringBuilder current = new StringBuilder();
+            int count = 1;
+            char prev = result.charAt(0);
 
+            for (int j = 1; j < result.length(); j++) {
+                if (result.charAt(j) == prev) {
+                    count++;
+                } else {
+                    current.append(count).append(prev);
+                    count = 1;
+                    prev = result.charAt(j);
+                }
+            }
 
+            current.append(count).append(prev);
+            result = current.toString();
+        }
 
-
-
-
-
-        // Scanner sc = new Scanner(System.in);
-        // System.out.print("enter the element:  ");
-        // String input = sc.nextLine();
-
-        // String Original = input.toLowerCase();
-        // String reversed = "";
-
-        // for(int i= Original.length()-1; i>=0;i--){
-        //     reversed += Original.charAt(i);
-
-        // }
-        // if(Original.equals(reversed)){
-        //     System.out.println("Palindrome....");
-        // }
-        // else{
-        //     System.out.println("not a Palindrome...");
-        // }
+        return result;
     }
-}
-}
+
+    
+
+
+
+
+    public static void main(String args[]) {
+// Driver code to test the function{
+        int n = 5;
+        System.out.println("Count and Say of " + n + " is: " + countAndSay(n));
+    
+
+
+
+        // String s1 = "Listen";
+        // String s2 = "Silent";
+
+        // if (areAnagrams(s1, s2)) {
+        //     System.out.println("The strings are anagrams.");
+        // } else {
+        //     System.out.println("The strings are NOT anagrams.");
+
+            // Scanner sc = new Scanner(System.in);
+            // System.out.print("enter the element: ");
+            // String input = sc.nextLine();
+
+            // String Original = input.toLowerCase();
+            // String reversed = "";
+
+            // for(int i= Original.length()-1; i>=0;i--){
+            // reversed += Original.charAt(i);
+
+            // }
+            // if(Original.equals(reversed)){
+            // System.out.println("Palindrome....");
+            // }
+            // else{
+            // System.out.println("not a Palindrome...");
+            // }
+        }
+    }
