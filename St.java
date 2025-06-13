@@ -23,8 +23,10 @@ public class St {
         return Arrays.equals(arr1, arr2);
     }
 
- public static String countAndSay(int n) {
-        if (n <= 0) return "";
+    // count and say problem
+    public static String countAndSay(int n) {
+        if (n <= 0)
+            return "";
 
         String result = "1";
 
@@ -50,43 +52,57 @@ public class St {
         return result;
     }
 
+    //longest common prefix
+     public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            // Reduce the prefix until it matches the current string
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        }
+        return prefix;
+    }
+
+         public static void main(String args[]) {
+String[] words = {"flower", "flow", "flight"};
+        String result = longestCommonPrefix(words);
+        System.out.println("Longest Common Prefix: " + result);
     
 
 
 
-
-    public static void main(String args[]) {
-// Driver code to test the function{
-        int n = 5;
-        System.out.println("Count and Say of " + n + " is: " + countAndSay(n));
-    
-
-
+        // Driver code to test the function{
+        // int n = 5;
+        // System.out.println("Count and Say of " + n + " is: " + countAndSay(n));
 
         // String s1 = "Listen";
         // String s2 = "Silent";
 
         // if (areAnagrams(s1, s2)) {
-        //     System.out.println("The strings are anagrams.");
+        // System.out.println("The strings are anagrams.");
         // } else {
-        //     System.out.println("The strings are NOT anagrams.");
+        // System.out.println("The strings are NOT anagrams.");
 
-            // Scanner sc = new Scanner(System.in);
-            // System.out.print("enter the element: ");
-            // String input = sc.nextLine();
+        // Scanner sc = new Scanner(System.in);
+        // System.out.print("enter the element: ");
+        // String input = sc.nextLine();
 
-            // String Original = input.toLowerCase();
-            // String reversed = "";
+        // String Original = input.toLowerCase();
+        // String reversed = "";
 
-            // for(int i= Original.length()-1; i>=0;i--){
-            // reversed += Original.charAt(i);
+        // for(int i= Original.length()-1; i>=0;i--){
+        // reversed += Original.charAt(i);
 
-            // }
-            // if(Original.equals(reversed)){
-            // System.out.println("Palindrome....");
-            // }
-            // else{
-            // System.out.println("not a Palindrome...");
-            // }
-        }
+        // }
+        // if(Original.equals(reversed)){
+        // System.out.println("Palindrome....");
+        // }
+        // else{
+        // System.out.println("not a Palindrome...");
+        // }
     }
+}
