@@ -52,74 +52,80 @@ public class St {
         return result;
     }
 
-    //longest common prefix
-     public static String longestCommonPrefix(String[] strs) {
+    // longest common prefix
+    public static String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0)
-         return "";
+            return "";
 
         String prefix = strs[0];
         for (int i = 1; i < strs.length; i++) {
             // Reduce the prefix until it matches the current string
             while (strs[i].indexOf(prefix) != 0) {
                 prefix = prefix.substring(0, prefix.length() - 1);
-                if (prefix.isEmpty()) return "";
+                if (prefix.isEmpty())
+                    return "";
             }
         }
         return prefix;
     }
+//COMPRESS STRING
+    public static String compress(String str) {
+        StringBuilder compressed = new StringBuilder();
+        int count = 1;
 
-         
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) == str.charAt(i - 1)) {
+                count++;
+            } else {
+                compressed.append(str.charAt(i - 1)).append(count);
+                count = 1;
+            }
+        }
 
+        // Append the last character and its count
+        compressed.append(str.charAt(str.length() - 1)).append(count);
+
+        return compressed.toString();
+    }
 
     public static void main(String[] args) {
-      
-      
-      
-      //convert string to integer
-        String input = "abcxyz";
-               for (char c : input.toCharArray()) {
-            int value = c - 'a';
-            System.out.println(c + " -> " + value);
+        String input1 = "aaabbbbcc";
+        System.out.println("Compressed: " + compress(input1));
 
-                 
-        }
+        // convert string to integer
+        // String input2 = "abcxyz";
+        // for (char c : input2.toCharArray()) {
+        // int value = c - 'a';
+        // System.out.println(c + " -> " + value);
 
+        // }
 
-//valid palindrome
-System.out.println();
-        String s = "civmic";
-        System.out.println(validPalindrome(s)); // true
-    }
-        public static boolean validPalindrome(String s) {
-        int left = 0, right = s.length() - 1;
+        // valid palindrome
+        // System.out.println();
+        // String s = "civic";
+        // System.out.println(validPalindrome(s)); // true
+        // }
+        // public static boolean validPalindrome(String s) {
+        // int left = 0, right = s.length() - 1;
 
-        while (left < right) {
-            if (s.charAt(left) != s.charAt(right)) {
-                return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
-            }
-            left++;
-            right--;
-        }
-        return true;
-    }
-    private static boolean isPalindrome(String s, int left, int right) {
-        while (left < right) {
-            if (s.charAt(left++) != s.charAt(right--)) return false;
-        }
-        return true;
+        // while (left < right) {
+        // if (s.charAt(left) != s.charAt(right)) {
+        // return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
+        // }
+        // left++;
+        // right--;
+        // }
+        // return true;
+        // }
+        // private static boolean isPalindrome(String s, int left, int right) {
+        // while (left < right) {
+        // if (s.charAt(left++) != s.charAt(right--)) return false;
+        // }
+        // return true;
 
-
-
-
-
-
-
-// String[] words = {"flower", "flow", "flight"};
-//         String result = longestCommonPrefix(words);
-//         System.out.println("Longest Common Prefix: " + result);
-    
-
-
+        // String[] words = {"flower", "flow", "flight"};
+        // String result = longestCommonPrefix(words);
+        // System.out.println("Longest Common Prefix: " + result);
 
         // Driver code to test the function{
         // int n = 5;
