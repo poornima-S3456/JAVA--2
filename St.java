@@ -88,9 +88,46 @@ public class St {
         return compressed.toString();
     }
 
+
+    //longest substring without repeating any character
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        int maxLen = 0;
+
+        HashSet<Character> set = new HashSet<>();
+        int left = 0, right = 0;
+
+        while (right < n) {
+            if (!set.contains(s.charAt(right))) {
+                set.add(s.charAt(right));
+                maxLen = Math.max(maxLen, right - left + 1);
+                right++;
+            } else {
+                set.remove(s.charAt(left));
+                left++;
+            }
+        }
+        return maxLen;
+    }
+
+    
+        
     public static void main(String[] args) {
-        String input1 = "aaabbbbcc";
-        System.out.println("Compressed: " + compress(input1));
+        String input = "abcabcbb";
+        int result = lengthOfLongestSubstring(input);
+        System.out.println("Length of longest substring without repeating characters: " + result);
+  
+
+
+
+
+
+
+
+
+
+        // String input1 = "aaabbbbcc";
+        // System.out.println("Compressed: " + compress(input1));
 
         // convert string to integer
         // String input2 = "abcxyz";
