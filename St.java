@@ -110,12 +110,49 @@ public class St {
         return maxLen;
     }
 
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
+
+        for (String str : strs) {
+            char[] charArr = str.toCharArray();
+            Arrays.sort(charArr); // sort characters to form the key
+            String sortedStr = new String(charArr);
+
+            if (!map.containsKey(sortedStr)) {
+                map.put(sortedStr, new ArrayList<>());
+            }
+            map.get(sortedStr).add(str);
+        }
+
+        return new ArrayList<>(map.values());
+    }
+
+   
+   
+       
+ 
+
+
     
         
     public static void main(String[] args) {
-        String input = "abcabcbb";
-        int result = lengthOfLongestSubstring(input);
-        System.out.println("Length of longest substring without repeating characters: " + result);
+
+ String[] input = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        List<List<String>> result = groupAnagrams(input);
+
+        for (List<String> group : result) {
+            System.out.println(group);
+        }
+
+
+
+
+
+
+
+        // String input4 = "abcabcbb";
+        // int result = lengthOfLongestSubstring(input);
+        // System.out.println("Length of longest substring without repeating characters: " + result);
   
 
 
