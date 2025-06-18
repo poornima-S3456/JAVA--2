@@ -110,6 +110,8 @@ public class St {
         return maxLen;
     }
 
+
+//Group anagrams together
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
 
@@ -128,21 +130,41 @@ public class St {
     }
 
    
-   
+          //string is a rotation  of another string
+
+           public static boolean isRotation(String s1, String s2) {
+        // Check for equal length and non-empty strings
+        if (s1.length() != s2.length() || s1.length() == 0) {
+            return false;
+        }
+        String combined = s1 + s1;
+        return combined.contains(s2);
+    }
+
        
- 
-
-
-    
         
     public static void main(String[] args) {
 
- String[] input = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        List<List<String>> result = groupAnagrams(input);
+ String str1 = "waterbottle";
+        String str2 = "erbottlewat";
 
-        for (List<String> group : result) {
-            System.out.println(group);
+        if (isRotation(str1, str2)) {
+            System.out.println(str2 + " is a rotation of " + str1);
+        } else {
+            System.out.println(str2 + " is NOT a rotation of " + str1);
         }
+    
+
+
+
+
+
+//  String[] input = {"eat", "tea", "tan", "ate", "nat", "bat"};
+//         List<List<String>> result = groupAnagrams(input);
+
+//         for (List<String> group : result) {
+//             System.out.println(group);
+//         }
 
 
 
