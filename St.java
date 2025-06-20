@@ -68,7 +68,8 @@ public class St {
         }
         return prefix;
     }
-//COMPRESS STRING
+
+    // COMPRESS STRING
     public static String compress(String str) {
         StringBuilder compressed = new StringBuilder();
         int count = 1;
@@ -88,8 +89,7 @@ public class St {
         return compressed.toString();
     }
 
-
-    //longest substring without repeating any character
+    // longest substring without repeating any character
     public static int lengthOfLongestSubstring(String s) {
         int n = s.length();
         int maxLen = 0;
@@ -110,8 +110,7 @@ public class St {
         return maxLen;
     }
 
-
-//Group anagrams together
+    // Group anagrams together
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
 
@@ -129,10 +128,9 @@ public class St {
         return new ArrayList<>(map.values());
     }
 
-   
-          //string is a rotation  of another string
+    // string is a rotation of another string
 
-           public static boolean isRotation(String s1, String s2) {
+    public static boolean isRotation(String s1, String s2) {
         // Check for equal length and non-empty strings
         if (s1.length() != s2.length() || s1.length() == 0) {
             return false;
@@ -141,10 +139,8 @@ public class St {
         return combined.contains(s2);
     }
 
-
-
-    //subsequence
-      public static boolean isSubsequence(String s1, String s2) {
+    // subsequence
+    public static boolean isSubsequence(String s1, String s2) {
         int i = 0, j = 0;
         while (i < s1.length() && j < s2.length()) {
             if (s1.charAt(i) == s2.charAt(j)) {
@@ -155,12 +151,8 @@ public class St {
         return i == s1.length();
     }
 
-    
-       
-
-        
     public static void main(String[] args) {
-         String s1 = "abc";
+        String s1 = "abc";
         String s2 = "ahbgdc";
 
         if (isSubsequence(s1, s2)) {
@@ -168,53 +160,27 @@ public class St {
         } else {
             System.out.println(s1 + " is NOT a subsequence of " + s2);
         }
-   
 
+        // String str1 = "waterbottle";
+        // String str2 = "erbottlewat";
 
+        // if (isRotation(str1, str2)) {
+        // System.out.println(str2 + " is a rotation of " + str1);
+        // } else {
+        // System.out.println(str2 + " is NOT a rotation of " + str1);
+        // }
 
+        // String[] input = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        // List<List<String>> result = groupAnagrams(input);
 
-
-
-
- String str1 = "waterbottle";
-        String str2 = "erbottlewat";
-
-        if (isRotation(str1, str2)) {
-            System.out.println(str2 + " is a rotation of " + str1);
-        } else {
-            System.out.println(str2 + " is NOT a rotation of " + str1);
-        }
-    
-
-
-
-
-
-//  String[] input = {"eat", "tea", "tan", "ate", "nat", "bat"};
-//         List<List<String>> result = groupAnagrams(input);
-
-//         for (List<String> group : result) {
-//             System.out.println(group);
-//         }
-
-
-
-
-
-
+        // for (List<String> group : result) {
+        // System.out.println(group);
+        // }
 
         // String input4 = "abcabcbb";
         // int result = lengthOfLongestSubstring(input);
-        // System.out.println("Length of longest substring without repeating characters: " + result);
-  
-
-
-
-
-
-
-
-
+        // System.out.println("Length of longest substring without repeating characters:
+        // " + result);
 
         // String input1 = "aaabbbbcc";
         // System.out.println("Compressed: " + compress(input1));
