@@ -36,20 +36,56 @@ public class twoD {
         }
     }
 
+    // search in row wise and column wise
+    public static int[] searchMatrix(int[][] matrix, int target) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        int i = 0, j = cols - 1; // start from top-right
+
+        while (i < rows && j >= 0) {
+            if (matrix[i][j] == target) {
+                return new int[] { i, j }; // found
+            } else if (matrix[i][j] > target) {
+                j--; // move left
+            } else {
+                i++; // move down
+            }
+        }
+
+        return new int[] { -1, -1 }; // not found
+    }
+
     public static void main(String[] args) {
         int[][] matrix = {
-                { 1, 2, 3 },
-                { 4, 5, 6 },
-                { 7, 8, 9 }
+                { 10, 20, 30, 40 },
+                { 15, 25, 35, 45 },
+                { 27, 29, 37, 48 },
+                { 32, 33, 39, 50 }
         };
 
-        System.out.println("Original Matrix:");
-        printMatrix(matrix);
+        int target = 29;
+        int[] result = searchMatrix(matrix, target);
 
-        rotate(matrix);
+        if (result[0] != -1) {
+            System.out.println("Found at: (" + result[0] + ", " + result[1] + ")");
+        } else {
+            System.out.println("Element not found");
+        }
 
-        System.out.println("Rotated Matrix (90 degrees clockwise):");
-        printMatrix(matrix);
+        // int[][] matrix= {
+        // { 1, 2, 3 },
+        // { 4, 5, 6 },
+        // { 7, 8, 9 }
+        // };
+
+        // System.out.println("Original Matrix:");
+        // printMatrix(matrix);
+
+        // rotate(matrix);
+
+        // System.out.println("Rotated Matrix (90 degrees clockwise):");
+        // printMatrix(matrix);
 
         // transpose of matrix(code1)
         // int[][] matrix2 = {
