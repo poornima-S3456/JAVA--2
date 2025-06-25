@@ -20,17 +20,55 @@ public class semple {
         return false; // not found
     }
 
+
+
+    //snake pattern
+    public static void printSnakePattern(int[][] matrix) {
+        int rows = matrix.length;
+
+        for (int i = 0; i < rows; i++) {
+            if (i % 2 == 0) {
+                // Left to Right
+                for (int j = 0; j < matrix[i].length; j++) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            } else {
+                // Right to Left
+                for (int j = matrix[i].length - 1; j >= 0; j--) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            }
+        }
+    }
+      
+
     public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 4, 7, 11},
-            {2, 5, 8, 12},
-            {3, 6, 9, 16},
-            {10, 13, 14, 17}
+         int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
         };
 
-        int target = 9;
+        System.out.println("Snake Pattern:");
+        printSnakePattern(matrix);
 
-        boolean result = searchMatrix(matrix, target);
-        System.out.println("Target found: " + result);
+
+
+
+
+
+
+
+        // int[][] matrix1 = {
+        //     {1, 4, 7, 11},
+        //     {2, 5, 8, 12},
+        //     {3, 6, 9, 16},
+        //     {10, 13, 14, 17}
+        // };
+
+        // int target = 9;
+
+        // boolean result = searchMatrix(matrix, target);
+        // System.out.println("Target found: " + result);
     }
 }
