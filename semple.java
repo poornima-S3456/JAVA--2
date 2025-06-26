@@ -40,17 +40,65 @@ public class semple {
             }
         }
     }
-      
+
+
+    //code lll
+      public static void modifyMatrix(int[][] mat) {
+        int R = mat.length;
+        int C = mat[0].length;
+        
+        boolean[] row = new boolean[R];
+        boolean[] col = new boolean[C];
+
+        // Step 1: Store the rows and columns that need to be updated
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                if (mat[i][j] == 1) {
+                    row[i] = true;
+                    col[j] = true;
+                }
+            } }
+        // Step 2: Update the matrix
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                if (row[i] || col[j]) {
+                    mat[i][j] = 1;
+                }
+            }   }    }
+
+    public static void printMatrix(int[][] mat) {
+        for (int[] row : mat) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }      
 
     public static void main(String[] args) {
-         int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+ int[][] mat = {
+            {1, 0, 0},
+            {0, 0, 0},
+            {0, 0, 0}
         };
+        System.out.println("Original Matrix:");
+        printMatrix(mat);
 
-        System.out.println("Snake Pattern:");
-        printSnakePattern(matrix);
+        modifyMatrix(mat);
+
+        System.out.println("Modified Matrix:");
+        printMatrix(mat);
+
+
+
+        //  int[][] matrix = {
+        //     {1, 2, 3},
+        //     {4, 5, 6},
+        //     {7, 8, 9}
+        // };
+
+        // System.out.println("Snake Pattern:");
+        // printSnakePattern(matrix);
 
 
 
