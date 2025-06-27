@@ -21,8 +21,7 @@ public class DSA {
     // }
     // }
 
-
-    //(find permutation )
+    // (find permutation )
     static void permute(String str, String result) {
 
         // Base case: if input string is empty print the result
@@ -44,7 +43,7 @@ public class DSA {
 
     }
 
-    //(dutch national flag problem)
+    // (dutch national flag problem)
     public static void sortColors(int arr[]) {
         int low = 0;
         int mid = 0;
@@ -71,61 +70,47 @@ public class DSA {
         }
     }
 
+    // missing number
+    public static int missingNumber(int arr[], int n) {
+        int totel = n * (n + 1) / 2;
+        int sum = 0;
 
-  //missing number
-    public static int missingNumber(int arr[] , int n){
-        int totel = n*(n+1)/2;
-        int sum =0;
-
-        for(int num : arr){
-            sum+=num;         }
-    
-    return totel-sum;
-    
+        for (int num : arr) {
+            sum += num;
         }
 
+        return totel - sum;
 
-        
+    }
 
-     // array leader
-          static void findLeader(int arr[]){
+    // array leader
+    static void findLeader(int arr[]) {
 
         int n = arr.length;
-        int maxFromright = arr[n-1];
+        int maxFromright = arr[n - 1];
 
-        System.out.print("Leaders: "+maxFromright+ " ");
+        System.out.print("Leaders: " + maxFromright + " ");
 
-        //traverse from second last to the start
+        // traverse from second last to the start
 
-        for(int i=n-2;i>=0;i-- ){
+        for (int i = n - 2; i >= 0; i--) {
 
-            if(arr[i]>maxFromright){
+            if (arr[i] > maxFromright) {
                 maxFromright = arr[i];
-                System.out.print(maxFromright+ " ");
+                System.out.print(maxFromright + " ");
             }
         }
-     }
-
-
-     
-
-
+    }
 
     public static void main(String args[]) {
-
- int arr6[]= {16,17,4,3,5,2};
-
- findLeader(arr6);
-
-
+        int arr6[] = { 16, 17, 4, 3, 5, 2 };
+        findLeader(arr6);
 
         // int arr[]= { 1,2,3,4,5,6,7,9,10};
         // int n=10;
 
         // int missing = missingNumber(arr,n);
         // System.out.println("missing number is: "+ missing);
-
-
 
         // int arr[] = { 2, 0, 1, 2, 2, 1, 0, };
         // sortColors(arr);
