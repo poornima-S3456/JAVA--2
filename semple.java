@@ -153,17 +153,55 @@ public class semple {
         dfs(grid, i, j + 1); // right
         dfs(grid, i, j - 1); // left
     }  
-         
+
+    //boundry traversal of matrix
+    public static void boundaryTraversal(int[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        // Step 1: Top row
+        for (int i = 0; i < cols; i++) {
+            System.out.print(matrix[0][i] + " ");
+        }
+        // Step 2: Right column
+        for (int i = 1; i < rows; i++) {
+            System.out.print(matrix[i][cols - 1] + " ");
+        }
+        // Step 3: Bottom row (only if more than one row)
+        if (rows > 1) {
+            for (int i = cols - 2; i >= 0; i--) {
+                System.out.print(matrix[rows - 1][i] + " ");
+            }
+        }
+        // Step 4: Left column (only if more than one column)
+        if (cols > 1) {
+            for (int i = rows - 2; i > 0; i--) {
+                System.out.print(matrix[i][0] + " ");
+            }
+        }
+    }      
 
       public static void main(String[] args) {
-          semple obj = new semple();
-        char[][] grid = {
-            {'1','1','0','0','0'},
-            {'1','1','0','0','0'},
-            {'0','0','1','0','0'},
-            {'0','0','0','1','1'}
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
         };
-        System.out.println("Number of islands: " + obj.numIslands(grid)); // Output: 3
+        boundaryTraversal(matrix);
+   
+         
+
+
+
+
+
+        //   semple obj = new semple();
+        // char[][] grid = {
+        //     {'1','1','0','0','0'},
+        //     {'1','1','0','0','0'},
+        //     {'0','0','1','0','0'},
+        //     {'0','0','0','1','1'}
+        // };
+        // System.out.println("Number of islands: " + obj.numIslands(grid)); // Output: 3
   
          
 
