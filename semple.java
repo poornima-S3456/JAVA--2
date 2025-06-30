@@ -1,7 +1,7 @@
 import java.util.Stack;
 
 public class semple {
-    public static boolean searchMatrix(int[][] matrix, int target) {
+    public static boolean search(int[][] matrix, int target) {
         if (matrix.length == 0 || matrix[0].length == 0)
             return false;
 
@@ -178,15 +178,54 @@ public class semple {
                 System.out.print(matrix[i][0] + " ");
             }
         }
-    }      
+    } 
+    
+    // staircase search
+    public static boolean searchMatrix(int[][] matrix, int target) {
+        int row = 0;
+        int col = matrix[0].length - 1; // Start at top-right
 
+        while (row < matrix.length && col >= 0) {
+            int current = matrix[row][col];
+
+            if (current == target) {
+                return true;
+            } else if (current > target) {
+                col--; // Move left
+            } else {
+                row++; // Move down
+            }
+        }
+
+        return false; // Target not found
+    }
+     
       public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+int[][] matrix = {
+            {1, 4, 7, 11},
+            {2, 5, 8, 12},
+            {3, 6, 9, 16},
+            {10, 13, 14, 17}
         };
-        boundaryTraversal(matrix);
+        int target = 5;
+
+        if (searchMatrix(matrix, target)) {
+            System.out.println("Target found");
+        } else {
+            System.out.println("Target not found");
+        }
+
+   
+
+
+
+
+        // int[][] matrix = {
+        //     {1, 2, 3},
+        //     {4, 5, 6},
+        //     {7, 8, 9}
+        // };
+        // boundaryTraversal(matrix);
    
          
 
