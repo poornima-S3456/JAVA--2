@@ -200,20 +200,61 @@ public class semple {
         return false; // Target not found
     }
      
+
+
+    //median\
+     public static int countSmallerThanMid(int[] row, int mid) {
+        int l = 0, h = row.length - 1;
+        while (l <= h) {
+            int m = (l + h) / 2;
+            if (row[m] <= mid)
+                l = m + 1;
+            else
+                h = m - 1;        }
+        return l;    }
+        
+    public static int findMedian(int[][] matrix, int r, int c) {
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+        for (int i = 0; i < r; i++) {
+            min = Math.min(min, matrix[i][0]);
+            max = Math.max(max, matrix[i][c - 1]);
+        }
+        int desired = (r * c + 1) / 2;
+        while (min < max) {
+            int mid = min + (max - min) / 2;
+            int place = 0;
+            for (int i = 0; i < r; ++i)
+                place += countSmallerThanMid(matrix[i], mid);
+
+            if (place < desired)
+                min = mid + 1;
+            else
+                max = mid;        }
+        return min;
+    }         
       public static void main(String[] args) {
 int[][] matrix = {
-            {1, 4, 7, 11},
-            {2, 5, 8, 12},
-            {3, 6, 9, 16},
-            {10, 13, 14, 17}
+            {1, 3, 5},
+            {2, 6, 9},
+            {3, 6, 9}
         };
-        int target = 5;
+        int r = matrix.length, c = matrix[0].length;
+        System.out.println("Median is: " + findMedian(matrix, r, c));
 
-        if (searchMatrix(matrix, target)) {
-            System.out.println("Target found");
-        } else {
-            System.out.println("Target not found");
-        }
+
+// int[][] matrix1 = {
+//             {1, 4, 7, 11},
+//             {2, 5, 8, 12},
+//             {3, 6, 9, 16},
+//             {10, 13, 14, 17}
+//         };
+//         int target = 5;
+
+//         if (searchMatrix(matrix, target)) {
+//             System.out.println("Target found");
+//         } else {
+//             System.out.println("Target not found");
+//         }
 
    
 
