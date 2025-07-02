@@ -69,7 +69,7 @@ public class semple {
         }
     }
 
-    public static void printMatrix(int[][] mat) {
+    public static void printMatrix1(int[][] mat) {
         for (int[] row : mat) {
             for (int val : row) {
                 System.out.print(val + " ");
@@ -198,11 +198,10 @@ public class semple {
         }
 
         return false; // Target not found
-    }
-     
+    }  
 
 
-    //median\
+    //median
      public static int countSmallerThanMid(int[] row, int mid) {
         int l = 0, h = row.length - 1;
         while (l <= h) {
@@ -212,7 +211,6 @@ public class semple {
             else
                 h = m - 1;        }
         return l;    }
-        
     public static int findMedian(int[][] matrix, int r, int c) {
         int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         for (int i = 0; i < r; i++) {
@@ -225,21 +223,60 @@ public class semple {
             int place = 0;
             for (int i = 0; i < r; ++i)
                 place += countSmallerThanMid(matrix[i], mid);
-
             if (place < desired)
                 min = mid + 1;
             else
                 max = mid;        }
         return min;
-    }         
-      public static void main(String[] args) {
-int[][] matrix = {
-            {1, 3, 5},
-            {2, 6, 9},
-            {3, 6, 9}
+    } 
+
+    //boolean matrix problem
+     public static void booleanMatrix(int matrix[][]) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        boolean[] row = new boolean[m];
+        boolean[] col = new boolean[n];
+        // Step 1: Mark rows and columns to be updated
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 1) {
+                    row[i] = true;
+                    col[j] = true;
+                }      }        }
+        // Step 2: Update the matrix
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (row[i] || col[j]) {
+                    matrix[i][j] = 1;
+                }
+            }    }    }
+    // Utility function to print the matrix
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int val : row)
+                System.out.print(val + " ");
+            System.out.println();
+        }    }   
+     public static void main(String[] args) {
+ int[][] matrix = {
+            {1, 0, 0},
+            {0, 0, 0},
+            {0, 0, 1}
         };
-        int r = matrix.length, c = matrix[0].length;
-        System.out.println("Median is: " + findMedian(matrix, r, c));
+        booleanMatrix(matrix);
+        printMatrix(matrix);        
+
+
+
+
+// int[][] matrix3 = {
+//             {1, 3, 5},
+//             {2, 6, 9},
+//             {3, 6, 9}
+//         };
+//         int r = matrix.length, c = matrix[0].length;
+//         System.out.println("Median is: " + findMedian(matrix, r, c));
 
 
 // int[][] matrix1 = {
