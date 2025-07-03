@@ -259,13 +259,36 @@ public class semple {
             System.out.println();
         }    }   
      public static void main(String[] args) {
- int[][] matrix = {
-            {1, 0, 0},
-            {0, 0, 0},
-            {0, 0, 1}
-        };
-        booleanMatrix(matrix);
-        printMatrix(matrix);        
+
+String input = "capitolize first letter of every word";
+        String result = capitalizeFirstLetter(input);
+        System.out.println(result);
+    }
+
+    public static String capitalizeFirstLetter(String str) {
+        String[] words = str.split(" ");
+        StringBuilder capitalized = new StringBuilder();
+
+        for (String word : words) {
+            if (word.length() > 0) {
+                capitalized.append(Character.toUpperCase(word.charAt(0)))
+                           .append(word.substring(1)).append(" ");
+            }
+        }
+        return capitalized.toString().trim();
+
+
+
+
+
+
+        //  int[][] matrix = {
+        //     {1, 0, 0},
+        //     {0, 0, 0},
+        //     {0, 0, 1}
+        // };
+        // booleanMatrix(matrix);
+        // printMatrix(matrix);        
 
 
 
