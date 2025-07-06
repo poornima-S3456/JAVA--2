@@ -181,12 +181,56 @@ public class DSA {
         }
     }
 
-    // Example usage
-   
-       
-   
+     public static void findSubarray(int[] arr, int target) {
+        int start = 0, sum = 0;
 
-    public static void main(String args[]) {
+        for (int end = 0; end < arr.length; end++) {
+            sum += arr[end];
+
+            // Shrink the window as long as sum is greater than target
+            while (sum > target && start <= end) {
+                sum -= arr[start];
+                start++;
+            }
+            if (sum == target) {
+                System.out.println("Subarray found from index " + start + " to " + end);
+                return;
+            }
+        }
+System.out.println("No subarray found with the given sum.");
+    }
+
+       public static void main(String args[]) {
+
+       int[] arr = {1, 4, 20, 3, 10, 5};
+        int target = 33;
+        findSubarray(arr, target);
+    
+
+
+//  int[][] matrix = {
+//             {1, 2, 3},
+//             {4, 0, 6},
+//             {7, 8, 9}
+//         };
+
+//         setZeroes(matrix);
+
+//         // Print result
+//         for (int[] row : matrix) {
+//             for (int num : row) {
+//                 System.out.print(num + " ");
+//             }
+//             System.out.println();
+//         }
+        
+
+
+
+
+
+
+
 // int[] arr = {64, 25, 12, 22, 11};
 //         bubbleSort(arr);
 //         System.out.println("Sorted array:");
@@ -194,21 +238,6 @@ public class DSA {
 //             System.out.print(num + " ");
 //         }  
 
-         int[][] matrix = {
-            {1, 2, 3},
-            {4, 0, 6},
-            {7, 8, 9}
-        };
-
-        setZeroes(matrix);
-
-        // Print result
-        for (int[] row : matrix) {
-            for (int num : row) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
-        }
         
         
         // int arr6[] = { 16, 17, 4, 3, 5, 2 };
