@@ -1,8 +1,30 @@
 import java .util.*;
 
 public class Basic {
-        
+     String color;
+    int speed;
+
+    // method (member function)
+    void drive() {
+        System.out.println("The " + color + " car is driving at " + speed + " km/h.");
+    }
+
+
+
+    
+    
     public static void main(String[] args) {
+
+       
+        // Creating an object of the Car class
+        Basic myCar = new Basic();
+
+        // Setting values
+        myCar.color = "Red";
+        myCar.speed = 100;
+
+        // Calling a method on the object
+        myCar.drive();
 
         //code 1
         int[] numbers = {45, 32, 89, 12, 67, 90, 23};
