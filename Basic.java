@@ -9,11 +9,38 @@ public class Basic {
         System.out.println("The " + color + " car is driving at " + speed + " km/h.");
     }
 
+public static String reverseWords(String sentence) {
+        // Split the sentence into words
+        String[] words = sentence.trim().split("\\s+");
+        
+        // Use StringBuilder to build the reversed sentence
+        StringBuilder reversed = new StringBuilder();
 
+        // Traverse the words array in reverse order
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversed.append(words[i]);
+
+            // Add space if it's not the last word
+            if (i != 0) {
+                reversed.append(" ");
+            }
+        }
+
+        return reversed.toString();
+    }
+
+   
+        
 
     
     
     public static void main(String[] args) {
+
+
+String input = "Java is a powerful language";
+        String result = reverseWords(input);
+        System.out.println("Reversed: " + result);
+    
 
        
         // Creating an object of the Car class
