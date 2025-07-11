@@ -29,12 +29,35 @@ public static String reverseWords(String sentence) {
         return reversed.toString();
     }
 
+
+     
+       
+    public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int original = num;
+        int sum = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            sum += digit * digit * digit;
+            num /= 10;
+        }
+
+        if (sum == original) {
+            System.out.println(original + " is an Armstrong number.");
+        } else {
+            System.out.println(original + " is not an Armstrong number.");
+        }
    
         
 
-    
-    
-    public static void main(String[] args) {
+
+
+
+
+
 
 
 String input = "Java is a powerful language";
@@ -68,27 +91,27 @@ String input = "Java is a powerful language";
 
 
         //code2
-         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-        boolean isPrime = true;
+    //      Scanner sc = new Scanner(System.in);
+    //     System.out.print("Enter a number: ");
+    //     int num = sc.nextInt();
+    //     boolean isPrime = true;
 
-        if (num <= 1) {
-            isPrime = false;
-        } else {
-            for (int i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-        }
+    //     if (num <= 1) {
+    //         isPrime = false;
+    //     } else {
+    //         for (int i = 2; i <= Math.sqrt(num); i++) {
+    //             if (num % i == 0) {
+    //                 isPrime = false;
+    //                 break;
+    //             }
+    //         }
+    //     }
 
-        if (isPrime)
-            System.out.println(num + " is a Prime number.");
-        else
-            System.out.println(num + " is NOT a Prime number.");
-    }
+    //     if (isPrime)
+    //         System.out.println(num + " is a Prime number.");
+    //     else
+    //         System.out.println(num + " is NOT a Prime number.");
+   }
 }
 
     
